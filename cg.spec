@@ -21,7 +21,7 @@ allows developers to create advanced visual effects for today's
 programmable GPUs from NVIDIA and other vendors.
 
 %description -l pl
-Zestaw narzêdzi Cg NVIDII jest nalepszym sposobem wykorzystywania
+Zestaw narzêdzi Cg NVIDII jest najlepszym sposobem wykorzystywania
 dzisiejszych procesorów graficznych na wielu ró¿nych platformach.
 Dziêki wsparciu rozszerzeñ OpenGL-a ARB_vertex_program i
 ARB_fragment_program, kompilator pozwala developerom tworzyæ
