@@ -18,13 +18,13 @@ The NVIDIA Cg Toolkit is the best way to take advantage of today's
 GPUs across multiple platforms and APIs. Now supporting OpenGL's
 ARB_vertex_program and ARB_fragment_program extensions, the compiler
 allows developers to create advanced visual effects for today's
-programmable GPUs from NVIDIA and other vendors. 
+programmable GPUs from NVIDIA and other vendors.
 
 %description -l pl
 Zestaw narzêdzi Cg NVIDII jest nalepszym sposobem wykorzystywania
 dzisiejszych procesorów graficznych na wielu ró¿nych platformach.
-Dziêki wsparciu rozszerzeñ OpenGL-a ARB_vertex_program
-i ARB_fragment_program, kompilator pozwala developerom tworzyæ
+Dziêki wsparciu rozszerzeñ OpenGL-a ARB_vertex_program i
+ARB_fragment_program, kompilator pozwala developerom tworzyæ
 zaawansowane efekty wizualne na programowalne uk³ady graficzne NVIDII
 i innych producentów.
 
