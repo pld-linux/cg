@@ -1,5 +1,5 @@
 Summary:	NVIDIA Cg Compiler
-Summary(pl.UTF-8):   Kompilator Cg NVIDII
+Summary(pl.UTF-8):	Kompilator Cg NVIDII
 Name:		cg
 Version:	1.2.1
 Release:	1
