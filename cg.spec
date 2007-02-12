@@ -1,5 +1,5 @@
 Summary:	NVIDIA Cg Compiler
-Summary(pl):	Kompilator Cg NVIDII
+Summary(pl.UTF-8):   Kompilator Cg NVIDII
 Name:		cg
 Version:	1.2.1
 Release:	1
@@ -20,13 +20,13 @@ ARB_vertex_program and ARB_fragment_program extensions, the compiler
 allows developers to create advanced visual effects for today's
 programmable GPUs from NVIDIA and other vendors.
 
-%description -l pl
-Zestaw narzêdzi Cg NVIDII jest najlepszym sposobem wykorzystywania
-dzisiejszych procesorów graficznych na wielu ró¿nych platformach.
-Dziêki wsparciu rozszerzeñ OpenGL-a ARB_vertex_program i
-ARB_fragment_program, kompilator pozwala developerom tworzyæ
-zaawansowane efekty wizualne na programowalne uk³ady graficzne NVIDII
-i innych producentów.
+%description -l pl.UTF-8
+Zestaw narzÄ™dzi Cg NVIDII jest najlepszym sposobem wykorzystywania
+dzisiejszych procesorÃ³w graficznych na wielu rÃ³Å¼nych platformach.
+DziÄ™ki wsparciu rozszerzeÅ„ OpenGL-a ARB_vertex_program i
+ARB_fragment_program, kompilator pozwala developerom tworzyÄ‡
+zaawansowane efekty wizualne na programowalne ukÅ‚ady graficzne NVIDII
+i innych producentÃ³w.
 
 %prep
 %setup -q -c
