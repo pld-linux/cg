@@ -30,29 +30,34 @@ i innych producentów.
 
 %package devel
 Summary:        Header files for Cg library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki Cg
 Group:          Development/Libraries
 Requires:       %{name} = %{version}-%{release}
 
 %description devel
 This is the package containing the header files for Cg library.
 
+%description devel -l pl.UTF-8
+Ten pakiet zawiera pliki nagłówkowe biblioteki Cg.
+
 %package examples
 Summary:        Cg examples
+Summary(pl.UTF-8):	Przykłady dla Cg
 Group:          Applications
 
 %description examples
 Cg examples.
 
+%description examples -l pl.UTF-8
+Przykłady dla Cg.
+
 %prep
-%setup -q -c -T
 %ifarch %{ix86}
-tar xf %{SOURCE0}
+%setup -q -c
 %endif
 %ifarch %{x8664}
-tar xf %{SOURCE1}
+%setup -q -c -T -a 1
 %endif
-
-%build
 
 %install
 rm -rf $RPM_BUILD_ROOT
