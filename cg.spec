@@ -1,16 +1,16 @@
 Summary:	NVIDIA Cg Compiler
 Summary(pl.UTF-8):	Kompilator Cg NVIDII
 Name:		cg
-Version:	1.2.1
+Version:	1.5.0
 Release:	1
 License:	nVidia
 Group:		Development
-Source0:	ftp://download.nvidia.com/developer/cg/Cg_%{version}/Linux/Cg-%{version}-Linux.tar.gz
-# http://developer.nvidia.com/attach/6488
-Source1:	LinuxSDK.zip
-URL:		http://developer.nvidia.com/Cg
+Source0:	http://developer.download.nvidia.com/cg/Cg_1.5/%{version}/0019/Cg-1.5_Feb2007_x86.tar.gz
+# Source0-md5:	36bc6b9916a82ea70fa638adf1d99ed0
+Source1:	http://developer.download.nvidia.com/cg/Cg_1.5/%{version}/0019/Cg-1.5_Feb2007_x86_64.tar.gz
+# Source1-md5:	4e56dce89adee688817e4337232161e0
+URL:		http://developer.nvidia.com/object/cg_toolkit.html
 BuildRequires:	unzip
-ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,22 +28,39 @@ ARB_fragment_program, kompilator pozwala developerom tworzyć
 zaawansowane efekty wizualne na programowalne układy graficzne NVIDII
 i innych producentów.
 
-%prep
-%setup -q -c
-unzip %{SOURCE1}
+%package devel
+Summary:        Header files for Cg library
+Group:          Development/Libraries
+Requires:       %{name} = %{version}-%{release}
 
-rm -rf usr/local/Cg/docs/runtime/cgGL/txt
+%description devel
+This is the package containing the header files for Cg library.
+
+%package examples
+Summary:        Cg examples
+Group:          Applications
+
+%description examples
+Cg examples.
+
+%prep
+%setup -q -c -T
+%ifarch %{ix86}
+tar xf %{SOURCE0}
+%endif
+%ifarch %{x8664}
+tar xf %{SOURCE1}
+%endif
 
 %build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man3,%{_includedir}/Cg{,FX},%{_libdir},%{_examplesdir}/%{name}-%{version}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man3,%{_includedir}/Cg,%{_libdir},%{_examplesdir}/%{name}-%{version}}
 
 install usr/bin/* $RPM_BUILD_ROOT%{_bindir}
 install usr/include/Cg/* $RPM_BUILD_ROOT%{_includedir}/Cg
-install usr/include/CgFX/* $RPM_BUILD_ROOT%{_includedir}/CgFX
-install usr/lib/* $RPM_BUILD_ROOT%{_libdir}
+install usr/%{_lib}/* $RPM_BUILD_ROOT%{_libdir}
 install usr/share/man/man3/* $RPM_BUILD_ROOT%{_mandir}/man3
 
 cp -r usr/local/Cg/examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
@@ -56,9 +73,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc usr/local/Cg/{README,docs/{*.pdf,runtime/{html,cgGL}}}
+%doc usr/local/Cg/{README,docs/{*.pdf,html/*.html,txt/{cg,cgGL,profiles,stdlib}}}
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/*
 %{_mandir}/man3/*
+
+%files devel
+%defattr(644,root,root,755)
 %{_includedir}/*
-%{_examplesdir}/*
+
+%files examples
+%defattr(644,root,root,755)
+%{_examplesdir}/%{name}-%{version}
