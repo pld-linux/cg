@@ -10,7 +10,6 @@ Source0:	http://developer.download.nvidia.com/cg/Cg_1.5/%{version}/0019/Cg-1.5_F
 Source1:	http://developer.download.nvidia.com/cg/Cg_1.5/%{version}/0019/Cg-1.5_Feb2007_x86_64.tar.gz
 # Source1-md5:	4e56dce89adee688817e4337232161e0
 URL:		http://developer.nvidia.com/object/cg_toolkit.html
-BuildRequires:	unzip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,6 +32,8 @@ Summary:        Header files for Cg library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki Cg
 Group:          Development/Libraries
 Requires:       %{name} = %{version}-%{release}
+# for cgGL
+#Requires:	OpenGL-devel
 
 %description devel
 This is the package containing the header files for Cg library.
@@ -79,13 +80,14 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc usr/local/Cg/{README,docs/{*.pdf,html/*.html,txt/{cg,cgGL,profiles,stdlib}}}
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/*
-%{_mandir}/man3/*
+%attr(755,root,root) %{_bindir}/cgc
+%attr(755,root,root) %{_libdir}/libCg.so
+%attr(755,root,root) %{_libdir}/libCgGL.so
+%{_mandir}/man3/cg*.3*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/*
+%{_includedir}/Cg
 
 %files examples
 %defattr(644,root,root,755)
