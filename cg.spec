@@ -1,3 +1,6 @@
+# TODO:
+#  - link libCg.so with -lm and -lpthread
+
 Summary:	NVIDIA Cg Compiler
 Summary(pl.UTF-8):	Kompilator Cg NVIDII
 Name:		cg
@@ -10,6 +13,7 @@ Source0:	http://developer.download.nvidia.com/cg/Cg_1.5/%{version}/0019/Cg-1.5_F
 Source1:	http://developer.download.nvidia.com/cg/Cg_1.5/%{version}/0019/Cg-1.5_Feb2007_x86_64.tar.gz
 # Source1-md5:	4e56dce89adee688817e4337232161e0
 URL:		http://developer.nvidia.com/object/cg_toolkit.html
+ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
