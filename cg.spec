@@ -32,10 +32,10 @@ zaawansowane efekty wizualne na programowalne układy graficzne NVIDII
 i innych producentów.
 
 %package devel
-Summary:        Header files for Cg library
+Summary:	Header files for Cg library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki Cg
-Group:          Development/Libraries
-Requires:       %{name} = %{version}-%{release}
+Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
 # for cgGL
 #Requires:	OpenGL-devel
 
@@ -46,9 +46,9 @@ This is the package containing the header files for Cg library.
 Ten pakiet zawiera pliki nagłówkowe biblioteki Cg.
 
 %package examples
-Summary:        Cg examples
+Summary:	Cg examples
 Summary(pl.UTF-8):	Przykłady dla Cg
-Group:          Applications
+Group:		Applications
 
 %description examples
 Cg examples.
