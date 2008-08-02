@@ -4,14 +4,14 @@
 Summary:	NVIDIA Cg Compiler
 Summary(pl.UTF-8):	Kompilator Cg NVIDII
 Name:		cg
-Version:	1.5.0
+Version:	2.0.0015
 Release:	1
 License:	nVidia
 Group:		Development
-Source0:	http://developer.download.nvidia.com/cg/Cg_1.5/%{version}/0019/Cg-1.5_Feb2007_x86.tar.gz
-# Source0-md5:	36bc6b9916a82ea70fa638adf1d99ed0
-Source1:	http://developer.download.nvidia.com/cg/Cg_1.5/%{version}/0019/Cg-1.5_Feb2007_x86_64.tar.gz
-# Source1-md5:	4e56dce89adee688817e4337232161e0
+Source0:	http://developer.download.nvidia.com/cg/Cg_2.0/%{version}/Cg-2.0_May2008_x86.tgz
+# Source0-md5:	311069e73186b3a7837d35df08b714c8
+Source1:	http://developer.download.nvidia.com/cg/Cg_2.0/%{version}/Cg-2.0_May2008_x86_64.tgz
+# Source1-md5:	f0923e9fe9c0e0f1b1f49e9069c59815
 URL:		http://developer.nvidia.com/object/cg_toolkit.html
 ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -44,6 +44,17 @@ This is the package containing the header files for Cg library.
 
 %description devel -l pl.UTF-8
 Ten pakiet zawiera pliki nagłówkowe biblioteki Cg.
+
+%package doc
+Summary:	NVIDIA Cg Compiler documentation
+Summary(pl.UTF-8):	Dokumentacja kompilatora Cg NVIDII
+Group:		Development/Libraries
+
+%description doc
+NVIDIA Cg Compiler documentation.
+
+%description doc -l pl.UTF-8
+Dokumentacja kompilatora Cg NVIDII.
 
 %package examples
 Summary:	Cg examples
@@ -83,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc usr/local/Cg/{README,docs/{*.pdf,html/*.html,txt/{cg,cgGL,profiles,stdlib}}}
+%doc usr/local/Cg/README
 %attr(755,root,root) %{_bindir}/cgc
 %attr(755,root,root) %{_libdir}/libCg.so
 %attr(755,root,root) %{_libdir}/libCgGL.so
@@ -92,6 +103,10 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/Cg
+
+%files doc
+%defattr(644,root,root,755)
+%doc usr/local/Cg/docs/{*.pdf,html/*.html}
 
 %files examples
 %defattr(644,root,root,755)
