@@ -4,14 +4,14 @@
 Summary:	NVIDIA Cg Compiler
 Summary(pl.UTF-8):	Kompilator Cg NVIDII
 Name:		cg
-Version:	2.0.0015
+Version:	2.1.0017
 Release:	1
 License:	nVidia
 Group:		Development
-Source0:	http://developer.download.nvidia.com/cg/Cg_2.0/%{version}/Cg-2.0_May2008_x86.tgz
-# Source0-md5:	311069e73186b3a7837d35df08b714c8
-Source1:	http://developer.download.nvidia.com/cg/Cg_2.0/%{version}/Cg-2.0_May2008_x86_64.tgz
-# Source1-md5:	f0923e9fe9c0e0f1b1f49e9069c59815
+Source0:	http://developer.download.nvidia.com/cg/Cg_2.1/%{version}/Cg-2.1_February2009_x86.tgz
+# Source0-md5:	8752286743ddd9d5997e698714fcc556
+Source1:	http://developer.download.nvidia.com/cg/Cg_2.1/%{version}/Cg-2.1_February2009_x86_64.tgz
+# Source1-md5:	01a3d1e0936c3f221ede5b6bfd8d2e0c
 URL:		http://developer.nvidia.com/object/cg_toolkit.html
 ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
