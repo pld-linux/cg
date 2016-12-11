@@ -5,7 +5,7 @@ Summary:	NVIDIA Cg Compiler
 Summary(pl.UTF-8):	Kompilator Cg NVIDII
 Name:		cg
 Version:	2.1.0017
-Release:	1
+Release:	2
 License:	nVidia
 Group:		Development
 Source0:	http://developer.download.nvidia.com/cg/Cg_2.1/%{version}/Cg-2.1_February2009_x86.tgz
@@ -48,7 +48,10 @@ Ten pakiet zawiera pliki nagłówkowe biblioteki Cg.
 %package doc
 Summary:	NVIDIA Cg Compiler documentation
 Summary(pl.UTF-8):	Dokumentacja kompilatora Cg NVIDII
-Group:		Development/Libraries
+Group:		Documentation
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description doc
 NVIDIA Cg Compiler documentation.
@@ -60,6 +63,9 @@ Dokumentacja kompilatora Cg NVIDII.
 Summary:	Cg examples
 Summary(pl.UTF-8):	Przykłady dla Cg
 Group:		Applications
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description examples
 Cg examples.
@@ -79,12 +85,11 @@ Przykłady dla Cg.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man3,%{_includedir}/Cg,%{_libdir},%{_examplesdir}/%{name}-%{version}}
 
-install usr/bin/* $RPM_BUILD_ROOT%{_bindir}
-install usr/include/Cg/* $RPM_BUILD_ROOT%{_includedir}/Cg
-install usr/%{_lib}/* $RPM_BUILD_ROOT%{_libdir}
-install usr/share/man/man3/* $RPM_BUILD_ROOT%{_mandir}/man3
-
-cp -r usr/local/Cg/examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+install -p usr/bin/* $RPM_BUILD_ROOT%{_bindir}
+cp -p usr/include/Cg/* $RPM_BUILD_ROOT%{_includedir}/Cg
+cp -p usr/%{_lib}/* $RPM_BUILD_ROOT%{_libdir}
+cp -p usr/share/man/man3/* $RPM_BUILD_ROOT%{_mandir}/man3
+cp -a usr/local/Cg/examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
