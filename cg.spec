@@ -49,9 +49,7 @@ Ten pakiet zawiera pliki nagłówkowe biblioteki Cg.
 Summary:	NVIDIA Cg Compiler documentation
 Summary(pl.UTF-8):	Dokumentacja kompilatora Cg NVIDII
 Group:		Documentation
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description doc
 NVIDIA Cg Compiler documentation.
@@ -63,9 +61,7 @@ Dokumentacja kompilatora Cg NVIDII.
 Summary:	Cg examples
 Summary(pl.UTF-8):	Przykłady dla Cg
 Group:		Applications
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description examples
 Cg examples.
