@@ -5,7 +5,7 @@ Summary:	NVIDIA Cg Compiler
 Summary(pl.UTF-8):	Kompilator Cg NVIDII
 Name:		cg
 Version:	2.1.0017
-Release:	3
+Release:	4
 License:	nVidia
 Group:		Development
 Source0:	http://developer.download.nvidia.com/cg/Cg_2.1/%{version}/Cg-2.1_February2009_x86.tgz
@@ -15,6 +15,8 @@ Source1:	http://developer.download.nvidia.com/cg/Cg_2.1/%{version}/Cg-2.1_Februa
 URL:		http://developer.nvidia.com/object/cg_toolkit.html
 ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%undefine	_debugsource_packages
 
 %description
 The NVIDIA Cg Toolkit is the best way to take advantage of today's
